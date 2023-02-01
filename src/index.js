@@ -6,6 +6,8 @@ import App from "./App";
 import ErrorPage from "./error-page";
 import { Register } from "./register";
 import { Welcome } from "./welcome";
+import { ResetPassword } from "./resetpassword";
+import { ForgotPassword } from "./forgotpassword";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "welcome",
     element: <Welcome />,
+  },
+  {
+    path: "forgotpassword",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "resetpassword/:token/:email",
+    element: <ResetPassword />,
   },
 ]);
 

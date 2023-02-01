@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 import swal from "sweetalert";
 
-export const Register = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+export const ResetPassword = () => {
+  const { token, email } = useParams();
   const [password, setPassword] = useState("");
   const [password_confirmation, setConfirmPassword] = useState("");
-  const [phone, setPhone] = useState("");
 
-  async function SignUp(inputData) {
-    return fetch("https://msaasbackend.oaknetbusiness.com/api/auth/register", {
+  async function passwordReset(inputData) {
+    return fetch("https://msaasbackend.oaknetbusiness.com/api/password/reset", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,70 +22,38 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      name === "" ||
-      email === "" ||
-      password === "" ||
-      password_confirmation === "" ||
-      phone === ""
-    ) {
+    if (password === "" || password_confirmation === "") {
       swal("Failed", "Fields cannnot be empty", "error");
     } else if (password === password_confirmation) {
-      const response = await SignUp({
-        name,
+      const response = await passwordReset({
         email,
         password,
         password_confirmation,
-        phone,
+        token,
       });
-
       console.log(response);
-      if ("id" in response.data) {
-        swal("Success", "Registration Successful", "success", {
+      if ("data" in response) {
+        swal("Success", "Password Reset Successfully", "success", {
           buttons: false,
           timer: 1500,
         }).then(() => {
           window.location.href = "/";
         });
       } else {
-        swal("Failed", "Registration Failed", "error");
+        swal("Failed", "Password Reset Failed", "error");
       }
     } else {
-      swal("Failed", "Registration Failed", "error");
+      swal("Failed", "Password Reset Failed", "error");
     }
   };
-
   return (
     <div className="App bg-gradient-to-b from-teal-300 to-cyan-400 h-screen flex items-center justify-center">
-      <div className="form-container bg-white p-8 w-96 rounded-lg">
-        <form className="registerForm" onSubmit={handleSubmit}>
-          <h1 className="text-3xl mb-4 font-bold text-gray-800">Register</h1>
-          <div className="input-container flex flex-col mb-4">
-            <label htmlFor="name" className="mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              className="rounded-md border-2 p-3 border-gray-300 focus:outline-gray-500"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="input-container flex flex-col mb-4">
-            <label htmlFor="email" className="mb-2">
-              Email
-            </label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              value={email}
-              className="rounded-md border-2 p-3 border-gray-300 focus:outline-gray-500"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+      <div className="form-container  bg-white p-8 w-96 rounded-lg ">
+        <form className="loginForm" onSubmit={handleSubmit}>
+          <h1 className="text-3xl mb-4 font-bold text-gray-800">
+            Reset Password
+          </h1>
+
           <div className="input-container flex flex-col mb-4">
             <label htmlFor="password" className="mb-2">
               Password
@@ -112,30 +80,18 @@ export const Register = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-          <div className="input-container flex flex-col mb-4">
-            <label htmlFor="phone" className="mb-2">
-              Phone Number
-            </label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              value={phone}
-              className="rounded-md border-2 p-3 border-gray-300 focus:outline-gray-500"
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
+
           <button
             type="submit"
-            id="register-btn"
+            id="reset-btn"
             className="btn py-2.5 px-5 w-full bg-green-500 rounded-md text-white mt-3 hover:bg-green-400"
           >
-            Sign Up
+            Reset
           </button>
         </form>
+
         <div className="text-center mt-4">
           <Link to={`/`} className="link text-sm">
-            Already have an Account?{" "}
             <span className=" text-cyan-600 hover:text-cyan-500 hover:cursor-pointer">
               Sign In
             </span>
