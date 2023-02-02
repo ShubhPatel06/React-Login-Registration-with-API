@@ -1,9 +1,6 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import "./App.css";
-import swal from "sweetalert";
+import React from "react";
 
-function App() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -108,5 +105,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

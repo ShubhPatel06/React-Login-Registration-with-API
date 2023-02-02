@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import App from "./App";
 import ErrorPage from "./error-page";
 import { Register } from "./register";
 import { Welcome } from "./welcome";
 import { ResetPassword } from "./resetpassword";
 import { ForgotPassword } from "./forgotpassword";
+import App from "./App";
+import "./index.css";
+import Dashboard from "./dashboard/dashboard";
+import Layout from "./dashboard/shared/layout";
+import Users from "./dashboard/Users";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,20 @@ const router = createBrowserRouter([
   {
     path: "resetpassword/:token/:email",
     element: <ResetPassword />,
+  },
+  {
+    path: "mainDashboard",
+    element: <Layout />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "users",
+        element: <Users />,
+      },
+    ],
   },
 ]);
 
