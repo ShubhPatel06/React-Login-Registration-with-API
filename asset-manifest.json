@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/React-Login-Registration-with-API/static/css/main.6f9d836a.css",
+    "main.js": "/React-Login-Registration-with-API/static/js/main.38294012.js",
+    "index.html": "/React-Login-Registration-with-API/index.html",
+    "main.6f9d836a.css.map": "/React-Login-Registration-with-API/static/css/main.6f9d836a.css.map",
+    "main.38294012.js.map": "/React-Login-Registration-with-API/static/js/main.38294012.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f9d836a.css",
+    "static/js/main.38294012.js"
+  ]
+}
