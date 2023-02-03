@@ -1,9 +1,6 @@
 import {
   HiOutlineViewGrid,
-  HiOutlineShoppingCart,
   HiOutlineUsers,
-  HiOutlineDocumentText,
-  HiOutlineAnnotation,
   HiOutlineQuestionMarkCircle,
   HiOutlineCog,
 } from "react-icons/hi";
@@ -20,24 +17,6 @@ export const DASHBOARD_SIDEBAR_LINKS = [
     label: "Users",
     path: "/dashboard/users",
     icon: <HiOutlineUsers />,
-  },
-  {
-    key: "orders",
-    label: "Orders",
-    path: "/orders",
-    icon: <HiOutlineShoppingCart />,
-  },
-  {
-    key: "transactions",
-    label: "Transactions",
-    path: "/transactions",
-    icon: <HiOutlineDocumentText />,
-  },
-  {
-    key: "messages",
-    label: "Messages",
-    path: "/messages",
-    icon: <HiOutlineAnnotation />,
   },
 ];
 

@@ -41,9 +41,7 @@ export default function Stats() {
         <div className="pl-4">
           <span className="text-sm text-gray-500 font-light">Users</span>
           <div className="flex items-center">
-            <strong className="text-xl text-gray-700 font-semibold">
-              $ 129
-            </strong>
+            <strong className="text-xl text-gray-700 font-semibold">129</strong>
             <span className="text-sm text-green-500 pl-2">+30</span>
           </div>
         </div>
@@ -55,9 +53,7 @@ export default function Stats() {
         <div className="pl-4">
           <span className="text-sm text-gray-500 font-light">Total Orders</span>
           <div className="flex items-center">
-            <strong className="text-xl text-gray-700 font-semibold">
-              $ 150
-            </strong>
+            <strong className="text-xl text-gray-700 font-semibold">150</strong>
             <span className="text-sm text-green-500 pl-2">+15</span>
           </div>
         </div>

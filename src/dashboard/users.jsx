@@ -4,10 +4,7 @@ import { Link } from "react-router-dom";
 export default function Users() {
   return (
     <div>
-      <p>Hello Users</p>
-      <p className="mt-7">
-        <Link to={"/dashboard"}>go to dashboard</Link>
-      </p>
+      <h1 className="text-center text-3xl">Hello Users</h1>
     </div>
   );
 }

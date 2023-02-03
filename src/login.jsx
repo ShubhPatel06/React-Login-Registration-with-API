@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -100,7 +101,10 @@ export default function Login() {
           </Link>
         </div>
         <div className="text-center mt-2">
-          <Link to={`dashboard`} className="link text-sm">
+          <Link
+            to={`dashboard`}
+            className="link text-sm text-sky-500 hover:underline"
+          >
             Dashboard
           </Link>
         </div>
