@@ -1,4 +1,7 @@
 import React from "react";
+import { useState } from "react";
+import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -89,7 +92,7 @@ export default function Login() {
           </Link>
         </div>
         <div className="text-center mt-2">
-          <Link to={`register`} className="link text-sm">
+          <Link to={"register"} className="link text-sm">
             Don't have an Account?{" "}
             <span className=" text-cyan-600 hover:text-cyan-400 hover:cursor-pointer">
               Sign Up
@@ -97,7 +100,7 @@ export default function Login() {
           </Link>
         </div>
         <div className="text-center mt-2">
-          <Link to={`mainDashboard`} className="link text-sm">
+          <Link to={`dashboard`} className="link text-sm">
             Dashboard
           </Link>
         </div>
