@@ -1,1 +1,2 @@
-This is a React Application - Login and Registration with API and designed using Tailwind CSS.
+This is a React Login and Registration Application with API. There also includes an Admin Dashboard Design.
+Designed using Tailwind CSS.
