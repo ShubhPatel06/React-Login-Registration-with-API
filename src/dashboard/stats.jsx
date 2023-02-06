@@ -64,7 +64,7 @@ export default function Stats() {
 
 function BoxWrapper({ children }) {
   return (
-    <div className="bg-white rounded-sm p-4 flex-1 border-gray-200 flex items-center">
+    <div className="bg-white rounded-sm p-4 flex-1 border-gray-200 flex items-center shadow-md">
       {children}
     </div>
   );

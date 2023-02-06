@@ -48,7 +48,7 @@ const popularProducts = [
 
 export default function Products() {
   return (
-    <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 w-[20rem]">
+    <div className="bg-white px-4 pt-3 pb-4 rounded-sm border border-gray-200 w-[20rem] shadow-md">
       <strong className="text-gray-700 font-medium">Products</strong>
       <div className="mt-4 flex flex-col gap-3">
         {popularProducts.map((product) => (
