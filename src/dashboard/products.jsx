@@ -55,6 +55,7 @@ export default function Products() {
           <Link
             to={`/product/${product.id}`}
             className="flex hover:no-underline"
+            key={product.id}
           >
             <div className="w-10 h-10 bg-gray-200 rounded-sm overflow-hidden">
               <img
