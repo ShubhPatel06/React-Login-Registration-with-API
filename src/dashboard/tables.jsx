@@ -87,7 +87,12 @@ export default function Tables() {
               <tr key={order.id}>
                 <td>
                   {" "}
-                  <Link to={`/product/${order.id}`}>#{order.id}</Link>
+                  <Link
+                    to={`/product/${order.id}`}
+                    className="text-sky-500 hover:underline"
+                  >
+                    #{order.id}
+                  </Link>
                 </td>
                 <td>
                   <Link to={`/product/${order.product_id}`}>
